@@ -127,8 +127,8 @@
     <tr align="center">
       <td width="200"><a href="http://github.com/miltonjskim">팀장 : 김준석<br/>INFJ</a></td>
       <td width="200"><a href="http://github.com/wjdrbgus8167">팀원 : 정규현<br/>ISFP</a></td>
-      <td width="200"><a href="https://github.com/Kzerojun">팀원 : 김영준<br/>ISTP</a></td>
-      <td width="200"><a href="https://github.com/newww-a">팀원 : 신승아<br/>ENFP</a></td>
+      <td width="200"><a href="https://github.com/Kzerojun">팀원 : 김영준<br/>ENFP</a></td>
+      <td width="200"><a href="https://github.com/newww-a">팀원 : 신승아<br/>ISTP</a></td>
       <td width="200"><a href="https://github.com/songowen">팀원 : 송창현<br/>ISTP</a></td>
       <td width="200"><a href="https://github.com/juuhyeon">팀원 : 박주현<br/>ENTJ</a></td>
     </tr>
