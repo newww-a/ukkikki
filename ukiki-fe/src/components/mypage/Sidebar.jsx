@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { FaUser, FaHistory, FaSignOutAlt } from 'react-icons/fa';
 import SidebarItem from './SidebarItem';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { publicRequest } from '../../hooks/requestMethod';
+import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
-import useAuthStore from '../../stores/authStore';
+import useAuthStore from '../../store/authStore';
 
 const Sidebar = ({ onMenuClick }) => {
   const location = useLocation();

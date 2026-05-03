@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { publicRequest } from '../../../hooks/requestMethod';
+import { publicRequest } from '../../../api/customAxios';
 import Swal from 'sweetalert2';
-import useAuthStore from '../../../stores/authStore';
+import useAuthStore from '../../../store/authStore';
 
 const ProfileAvatar = ({ profileImageUrl }) => {
   const { userRole } = useAuthStore();

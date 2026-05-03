@@ -6,7 +6,7 @@ import { TravelPlanDetailProvider } from '../contexts/TravelPlanDetailContext';
 import { ProposalDetailProvider } from '../contexts/ProposalDetailContext';
 import MainLayout from '../components/TravelPlanner/MainLayout';
 import { StyledMainLayout } from './style/CreateTravelPageStyle';
-import { TravelPlanDetail } from '../apis/agency';
+import { TravelPlanDetail } from '../api/agency';
 
 const CreateTravelPage = () => {
   const { travelPlanId, proposalId } = useParams();

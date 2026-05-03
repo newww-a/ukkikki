@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/MainPage';
 import About from './pages/AboutPage';
 import UserRoom from './pages/UserRoomPage';
-import SearchRooms from './pages/SearchRoomsPage';
+import SearchRoom from './pages/SearchRoomPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import LoadingSpinner from './components/common/LoadingSpinner';
@@ -11,16 +11,15 @@ import MyRoomsPage from './pages/MyRoomsPage';
 import MyProfile from './pages/MyProfilePage';
 import TravelPlanDetail from './pages/TravelPlanDetailPage';
 import UserVotePage from './pages/UserVotePage';
-import OAuthSuccessPage from './components/auth/OAuthSuccessPage';
+import OAuthSuccessPage from './pages/OAuthSuccessPage'
 import CreateTravel from './pages/CreateTravelPage';
 import MeetingPage from './pages/MeetingPage';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // AOS 스타일 불러오기
-import AgencyProposalDetailPage from './pages/AgencyProposalDetailPage';
 import ProposalDetailForUser from './pages/ProposalDetailForUserPage';
 import ProposalDetail from './pages/ProposalDetailPage';
 import ProposalStatus from './pages/ProposalStatusPage';
 import EasterEgg from './pages/EasterEggPage';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // AOS 스타일 불러오기
 
 const App = () => {
   useEffect(() => {
@@ -41,7 +40,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<RegisterPage />} />
         <Route path="/user-room/:travelPlanId" element={<UserRoom />} />
-        <Route path="/search-room" element={<SearchRooms />} />
+        <Route path="/search-room" element={<SearchRoom />} />
         <Route
           path="/agency-detail/:travelPlanId"
           element={<TravelPlanDetail />}

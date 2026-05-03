@@ -6,7 +6,7 @@ import MapDisplay from './MapDisplay';
 import ScheduleByDate from './ScheduleByDate';
 import PlaceSelection from './PlaceSelection';
 import DetailForm from './DetailForm';
-import { CreateTravelProposal, UpdateTravelProposal } from '../../apis/agency';
+import { CreateTravelProposal, UpdateTravelProposal } from '../../api/agency';
 import {
   StyledMainLayout,
   StyledDateSidebar,

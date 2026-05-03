@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import { publicRequest } from '../hooks/requestMethod';
+import { publicRequest } from '../api/customAxios';
 import ProposalDetailTimeline from '../components/ProposalDetailForUser/ProposalDetailTimeline';
 import ProposalDetailInfo from '../components/ProposalDetailForUser/ProposalDetailInfo';
 import ProposalDetailContact from '../components/ProposalDetailForUser/ProposalDetailContact';

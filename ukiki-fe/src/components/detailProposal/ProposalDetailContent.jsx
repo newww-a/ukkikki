@@ -3,8 +3,8 @@ import { useNavigate, useParams } from 'react-router';
 import { MainContent } from '../../pages/style/AgencyRoomListPageStyle';
 import ProposalDetailContext from '../../contexts/ProposalDetailContext';
 import 'tailwindcss/tailwind.css';
-import { getPassport, getTotalCount } from '../../apis/agency';
-import { publicRequest } from '../../hooks/requestMethod';
+import { getPassport, getTotalCount } from '../../api/agency';
+import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
 import InquiryModal from './InquiryModal';
 

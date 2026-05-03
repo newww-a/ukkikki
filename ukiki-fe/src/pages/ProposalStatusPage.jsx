@@ -5,7 +5,7 @@ import Sidebar from '../components/mypage/Sidebar';
 import OngoingProposals from '../components/mypage/company/OngoingProposals';
 import ReceivedProposals from '../components/mypage/company/ReceivedProposals';
 import { TravelPlanProvider } from '../contexts/travelPlanContext';
-import useAuthStore from '../stores/authStore';
+import useAuthStore from '../store/authStore';
 import { useNavigate, useLocation } from 'react-router';
 import {
   MyProfileContainer,

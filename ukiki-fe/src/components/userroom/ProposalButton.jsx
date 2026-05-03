@@ -1,6 +1,6 @@
 // ProposalButton.jsx
 import React, { useState } from 'react';
-import { publicRequest } from '../../hooks/requestMethod';
+import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { stompClient } from '../../components/userroom/WebSocketComponent';

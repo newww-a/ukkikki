@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { publicRequest } from '../../../hooks/requestMethod';
+import { publicRequest } from '../../../api/customAxios';
 import { STATUS_MAP, THEME_COLORS } from '../../../constants';
 
 const MyRoomCard = ({ room }) => {

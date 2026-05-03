@@ -1,4 +1,4 @@
-import { publicRequest } from '../hooks/requestMethod';
+import { publicRequest } from "./customAxios";
 
 export const login = async (email, password, isCompany) => {
   const endpoint = isCompany ? '/auth/companies/login' : '/auth/members/login';

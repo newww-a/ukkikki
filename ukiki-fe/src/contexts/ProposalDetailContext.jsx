@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { ProposalDetail } from "../apis/agency";
+import { ProposalDetail } from "../api/agency";
 
 const ProposalDetailContext = createContext();
 

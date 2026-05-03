@@ -6,7 +6,7 @@ import { ko } from 'date-fns/locale';
 import KoreaAirportModal from '../../services/airport/KoreaAirportSelector';
 import WorldAirportModal from '../../services/airport/WorldAirportSelector';
 import CreateRoomModal from './CreateRoomModal';
-import { publicRequest } from '../../hooks/requestMethod';
+import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
 import { format } from 'date-fns';
 

@@ -1,6 +1,6 @@
 //여행 계획 제안 디테일
 import React, { createContext, useEffect, useState } from "react";
-import { TravelPlanDetail } from "../apis/agency";
+import { TravelPlanDetail } from "../api/agency";
 
 const TravelPlanDetailContext = createContext();
 

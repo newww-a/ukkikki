@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AgencyProposalslist } from '../../../apis/agency';
+import { AgencyProposalslist } from '../../../api/agency';
 import { useNavigate, useLocation } from 'react-router';
 import ReactPaginate from 'react-paginate'; // react-paginate import
 import {

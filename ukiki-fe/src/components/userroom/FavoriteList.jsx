@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState, useRef } from 'react';
 import { CiCirclePlus } from 'react-icons/ci';
 import Swal from 'sweetalert2';
 import { stompClient } from '../../components/userroom/WebSocketComponent';
-import { publicRequest } from '../../hooks/requestMethod';
+import { publicRequest } from '../../api/customAxios';
 import MapSearchBar from '../../services/map/MapSearchBar';
 
 const FavoriteList = ({

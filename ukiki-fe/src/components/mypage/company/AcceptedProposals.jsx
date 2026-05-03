@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AgencyProposalslist } from "../../../apis/agency";
+import { AgencyProposalslist } from "../../../api/agency";
 import { useNavigate } from "react-router";
 import { 
   Container, 

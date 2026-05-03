@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { UserProposalslist } from "../apis/agency";
+import { UserProposalslist } from "../api/agency";
 
 const TravelPlanContext = createContext();
 

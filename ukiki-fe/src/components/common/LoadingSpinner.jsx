@@ -1,4 +1,4 @@
-import { useLoadingStore } from '../../stores/loadingStore';
+import { useLoadingStore } from '../../store/loadingStore';
 import spinnerImage from '../../assets/loading-spinner.png';
 const LoadingSpinner = () => {
   const { loading } = useLoadingStore(); // Zustand에서 로딩 상태 가져오기

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { publicRequest } from '../hooks/requestMethod';
+import { publicRequest } from '../api/customAxios';
 import InteractiveSection from '../components/userroom/InteractiveSection';
 import Header from '../components/layout/Header';
 import FavoriteList from '../components/userroom/FavoriteList';
 import { LoadScript } from '@react-google-maps/api';
-import WebSocketComponent from '../components/userroom/WebSocketComponent';
+// import WebSocketComponent from '../components/userroom/WebSocketComponent';
 import Swal from 'sweetalert2';
 import BoardingPass from '../components/userroom/BoardingPass';
 import Draggable from 'react-draggable';
@@ -135,12 +135,12 @@ const UserRoom = () => {
         console.error('🚨 Google Maps API script failed to load:', error)
       }
     >
-      <WebSocketComponent
+      {/* <WebSocketComponent
         travelPlanId={travelPlanId}
         fetchRoomData={fetchRoomData}
         setFavorites={setFavorites}
         favorites={favorites}
-      />
+      /> */}
       <div className="flex flex-col w-screen h-screen overflow-hidden">
         <Header />
         <div className="relative flex-1">

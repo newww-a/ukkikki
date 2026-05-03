@@ -1,5 +1,5 @@
 // 여행사 여행 관련 API
-import { publicRequest } from '../hooks/requestMethod';
+import { publicRequest } from "./customAxios";
 
 //여행 계획 제출 목록 조회(유저 제안)
 

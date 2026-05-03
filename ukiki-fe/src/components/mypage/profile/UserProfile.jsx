@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ProfileAvatar from './ProfileAvatar';
 import ProfileInfo from './ProfileInfo';
-import { publicRequest } from '../../../hooks/requestMethod';
-import useAuthStore from '../../../stores/authStore';
+import { publicRequest } from '../../../api/customAxios';
+import useAuthStore from '../../../store/authStore';
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/layout/Header';
 import logo from '../assets/loading-spinner.png';
 import { useNavigate } from 'react-router-dom';
-import { publicRequest } from '../hooks/requestMethod';
+import { publicRequest } from '../api/customAxios';
 import MyRoomCard from '../components/mypage/myroom/MyRoomCard';
 import { STATUS_MAP } from '../constants';
 

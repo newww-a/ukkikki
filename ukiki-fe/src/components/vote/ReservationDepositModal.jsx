@@ -1,6 +1,6 @@
 // ReservationDepositModal.jsx
 import React, { useState } from 'react';
-import { publicRequest } from '../../hooks/requestMethod';
+import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
 import KakaoPayTest from './KakaoPayTest';
 import { IoIosCloseCircle } from 'react-icons/io';
