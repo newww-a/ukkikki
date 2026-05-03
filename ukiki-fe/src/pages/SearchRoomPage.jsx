@@ -4,7 +4,7 @@ import Footer from '../components/layout/Footer';
 import Header from '../components/layout/Header';
 import CardList from '../components/searchroom/CardList';
 import Sidebar from '../components/searchroom/SideBar';
-import { publicRequest } from '../hooks/requestMethod';
+import { publicRequest } from '../api/customAxios';
 import Swal from 'sweetalert2';
 
 const SearchRoom = () => {

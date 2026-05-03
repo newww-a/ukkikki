@@ -1,8 +1,8 @@
 import Footer from '../components/layout/Footer';
 import Header from '../components/layout/Header';
-import HeroSection from '../components/mainpage/HeroSection';
-import PartnerBrandSlider from '../components/mainpage/PartnerBrandSlider';
-import TravelPackageCarousel from '../components/mainpage/TravelPackageCarousel';
+import HeroSection from '../components/main/HeroSection';
+import PartnerBrandSlider from '../components/main/PartnerBrandSlider';
+import TravelPackageCarousel from '../components/main/TravelPackageCarousel';
 import axios from 'axios';
 
 const Home = () => {

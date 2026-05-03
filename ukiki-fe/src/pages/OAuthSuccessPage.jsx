@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import useAuthStore from '../../stores/authStore';
+import useAuthStore from '../store/authStore';
 
 const OAuthSuccessPage = () => {
   const navigate = useNavigate();

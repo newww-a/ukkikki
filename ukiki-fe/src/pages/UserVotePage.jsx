@@ -3,7 +3,7 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Footer from '../components/layout/Footer';
 import Header from '../components/layout/Header';
 import AgencyList from '../components/vote/AgencyList';
-import { publicRequest } from '../hooks/requestMethod';
+import { publicRequest } from '../api/customAxios';
 import Swal from 'sweetalert2';
 import ReservationDepositModal from '../components/vote/ReservationDepositModal'; // 예약금 결제 모달
 import { IoIosArrowBack } from 'react-icons/io';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { publicRequest } from '../../hooks/requestMethod';
+import { publicRequest } from '../../api/customAxios';
 
 const KoreaAirportModal = ({ isOpen, onClose, onSelect }) => {
   const [cities, setCities] = useState([]);

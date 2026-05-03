@@ -4,7 +4,7 @@ import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import HeroText from '../components/common/SloganText';
 import LoginForm from '../components/auth/LoginForm';
-import useAuthStore from '../stores/authStore';
+import useAuthStore from '../store/authStore';
 
 import kakaoLogo from '../assets/icon.png';
 import googleLogo from '../assets/google.png';

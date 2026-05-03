@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ko } from 'date-fns/locale';
 import { format, isSameDay, addMinutes, set } from 'date-fns';
-import { fetchAirportsAPI } from '../../apis/agency';
+import { fetchAirportsAPI } from '../../api/agency';
 import {
   DetailFormContainer,
   Table,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { publicRequest } from '../../hooks/requestMethod';
-import useAuthStore from '../../stores/authStore';
+import { publicRequest } from '../../api/customAxios';
+import useAuthStore from '../../store/authStore';
 import Swal from 'sweetalert2';
 
 const LoginForm = ({ isCompany }) => {

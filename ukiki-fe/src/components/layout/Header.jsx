@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import useAuthStore from '../../stores/authStore';
-import { publicRequest } from '../../hooks/requestMethod';
+import useAuthStore from '../../store/authStore';
+import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
 import logo from '../../assets/logo.png';
 import defaultProfile from '../../assets/profile.png';

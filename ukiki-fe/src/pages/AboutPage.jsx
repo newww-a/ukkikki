@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLoadingStore } from '../stores/loadingStore';
+import { useLoadingStore } from '../store/loadingStore';
 import axios from 'axios';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';

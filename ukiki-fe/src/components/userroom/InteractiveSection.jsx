@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, InfoWindow, OverlayView } from '@react-google-maps/api';
 import Chat from './Chat';
-import { publicRequest } from '../../hooks/requestMethod';
+import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
 import bananaIcon from '../../assets/loading-spinner.png';
 import WebSocketComponent, {

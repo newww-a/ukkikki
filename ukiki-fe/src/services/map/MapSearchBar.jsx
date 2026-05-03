@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Autocomplete } from '@react-google-maps/api';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import Slider from 'react-slick';
-import { publicRequest } from '../../hooks/requestMethod';
+import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
 import { stompClient } from '../../components/userroom/WebSocketComponent';
 import { Element } from 'react-scroll';

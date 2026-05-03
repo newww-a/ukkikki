@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // React Router 사용
-import { publicRequest } from '../../hooks/requestMethod';
+import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
 import { motion } from 'framer-motion';
 
