@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import clock from '../../../assets/clock.png'; // 상대 경로로 수정
 import trashCan from '../../../assets/trash_can.png'; // 상대 경로로 수정
 import {

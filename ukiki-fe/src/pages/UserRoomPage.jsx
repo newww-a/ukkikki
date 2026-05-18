@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { publicRequest } from '../api/customAxios';
 import InteractiveSection from '../components/userroom/InteractiveSection';

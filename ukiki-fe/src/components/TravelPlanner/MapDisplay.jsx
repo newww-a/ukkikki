@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import bananaIcon from '../../assets/loading-spinner.png';
 const apiKey = import.meta.env.VITE_APP_GOOGLE_API_KEY;

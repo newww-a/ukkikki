@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import TravelPlanDetailContext from '../../contexts/TravelPlanDetailContext';
 import ProposalDetailContext from '../../contexts/ProposalDetailContext';
 import {

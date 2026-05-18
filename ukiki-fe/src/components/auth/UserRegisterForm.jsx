@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { publicRequest } from '../../api/customAxios';
 import { useNavigate } from 'react-router-dom'; // ✅ React Router v6 이상에서 사용
 import Swal from 'sweetalert2';

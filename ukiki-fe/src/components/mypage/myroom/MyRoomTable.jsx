@@ -1,5 +1,4 @@
-// components/mypage/my/TravelRoomTable.jsx
-import React from 'react';
+
 import MyRoomRow from './MyRoomRow';
 
 // Mock 데이터 (추후 API 연동 시 이 부분을 API 호출 결과로 대체)

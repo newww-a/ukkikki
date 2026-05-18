@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import TravelPlanDetailContext from '../../contexts/TravelPlanDetailContext';
 import ProposalDetailContext from '../../contexts/ProposalDetailContext';
 import DateSidebar from './DateSidebar';

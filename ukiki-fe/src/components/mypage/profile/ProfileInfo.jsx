@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FaEnvelope } from 'react-icons/fa';
 import { SiKakaotalk, SiGoogle } from 'react-icons/si';
 import useAuthStore from '../../../store/authStore';

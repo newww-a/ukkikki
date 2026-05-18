@@ -1,5 +1,3 @@
-// components/mypage/my/TravelRoomRow.jsx
-import React from 'react';
 
 const MyRoomRow = ({ plan }) => {
   const {

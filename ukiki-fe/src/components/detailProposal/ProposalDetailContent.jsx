@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { MainContent } from '../../pages/style/AgencyRoomListPageStyle';
 import ProposalDetailContext from '../../contexts/ProposalDetailContext';

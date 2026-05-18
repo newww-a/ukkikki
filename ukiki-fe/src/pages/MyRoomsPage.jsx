@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/layout/Header';
 import logo from '../assets/loading-spinner.png';
 import { useNavigate } from 'react-router-dom';

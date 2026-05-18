@@ -1,4 +1,3 @@
-import React from 'react';
 import AgencyCard from './AgencyCard';
 
 const AgencyList = ({ agencies, onVote, onDetail, onJoinMeeting }) => {

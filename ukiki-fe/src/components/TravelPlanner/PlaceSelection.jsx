@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import { Autocomplete, useJsApiLoader } from '@react-google-maps/api';
 import TravelPlanDetailContext from '../../contexts/TravelPlanDetailContext';
 import ProposalDetailContext from '../../contexts/ProposalDetailContext';

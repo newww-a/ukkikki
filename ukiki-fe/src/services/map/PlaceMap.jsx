@@ -1,5 +1,5 @@
 // src/services/PlaceMap.jsx
-import React from 'react';
+
 import { GoogleMap, Marker } from '@react-google-maps/api';
 import bananaIcon from '../../assets/loading-spinner.png'; // 예시
 

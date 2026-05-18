@@ -1,6 +1,6 @@
 //제안서 디테일(계획)
 
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import TravelPlanDetailContext from '../../contexts/TravelPlanDetailContext';
 import { PorposalContentContainer } from './style/ProposalContentStyle';
 
