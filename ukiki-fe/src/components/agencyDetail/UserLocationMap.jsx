@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LoadScript, InfoWindow } from "@react-google-maps/api";
 import PlaceMap from "../../services/map/PlaceMap";
 import { MapContainer } from "./style/UserLocationMap";
