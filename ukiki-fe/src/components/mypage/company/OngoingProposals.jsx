@@ -2,23 +2,6 @@ import { useEffect, useState } from 'react';
 import { AgencyProposalslist } from '../../../api/agency';
 import { useNavigate, useLocation } from 'react-router';
 import ReactPaginate from 'react-paginate'; // react-paginate import
-import {
-  Container,
-  CardWrapper,
-  Card,
-  TitleWrapper,
-  Title,
-  TableWrapper,
-  Table,
-  TableHead,
-  TableHeadRow,
-  TableHeadCell,
-  TableBody,
-  TableRow,
-  TableCell,
-  Status,
-  PaginationWrapper, // styled-component로 정의된 페이지네이션 래퍼
-} from './style/OngoingProposalsStyle';
 import { STATUS_PROPOSAL } from '../../../constants';
 
 // 필터 옵션 배열 정의
@@ -73,6 +56,21 @@ const OngoingProposals = () => {
     V: '투표중',
   };
 
+  const statusStyles = {
+    D: 'text-[#991B33] bg-[#FEE2E2]',
+    A: 'text-[#3053B4] bg-[#DBEAFE]',
+    W: 'text-[#1C6534] bg-[#DCFCE7]',
+    V: 'text-[#995E1B] bg-[#FEEDDB]',
+  };
+
+  // styled-components 대신 일반 컴포넌트로 변경
+  const StatusBadge = ({ status, children }) => {
+    const baseClass = 'px-2 py-1 text-[0.9375rem] font-bold uppercase rounded';
+    const statusClass = statusStyles[status] || 'text-white bg-gray-500';
+
+    return <span className={`${baseClass} ${statusClass}`}>{children}</span>;
+  };
+
   const handleFilterChange = (option) => {
     setSelectedFilter(option);
     setCurrentPage(0); // 필터 변경 시 첫 페이지로 리셋
@@ -97,10 +95,10 @@ const OngoingProposals = () => {
   };
 
   return (
-    <Container>
-      <CardWrapper>
-        <Card>
-          <TitleWrapper>
+    <div className="flex-none w-full max-w-full px-4">
+      <div className="flex-none w-full max-w-full px-4">
+        <div className="relative flex flex-col min-w-0 bg-white border-0 rounded-[1.25rem] bg-clip-border mb-6">
+          <div className="px-6 pt-6 rounded-t-[1.25rem] bg-white mb-0 border-b-0">
             <div className="flex items-center justify-center mb-8 space-x-8">
               {FILTER_OPTIONS.map((option) => (
                 <button
@@ -119,60 +117,76 @@ const OngoingProposals = () => {
                 </button>
               ))}
             </div>
-          </TitleWrapper>
-          <TableWrapper>
-            <Table>
-              <TableHead>
-                <TableHeadRow>
-                  <TableHeadCell>상품명</TableHeadCell>
-                  <TableHeadCell>여행 경로</TableHeadCell>
-                  <TableHeadCell>항공사</TableHeadCell>
-                  <TableHeadCell>기간</TableHeadCell>
-                  <TableHeadCell>상태</TableHeadCell>
-                </TableHeadRow>
-              </TableHead>
-              <TableBody>
+          </div>
+          <div className="px-6 pt-6 rounded-t-[1.25rem] bg-white mb-0 border-b-0">
+            <table className="w-full mb-0 border-y border-slate-200 text-slate-600 table-fixed">
+              <thead className="align-bottom">
+                <tr>
+                  <th className="p-[15px] whitespace-nowrap font-bold text-center uppercase border-b border-slate-200 text-[1.5625rem] text-slate-300 opacity-70 overflow-hidden text-ellipsis">
+                    상품명
+                  </th>
+                  <th className="p-[15px] whitespace-nowrap font-bold text-center uppercase border-b border-slate-200 text-[1.5625rem] text-slate-300 opacity-70 overflow-hidden text-ellipsis">
+                    여행 경로
+                  </th>
+                  <th className="p-[15px] whitespace-nowrap font-bold text-center uppercase border-b border-slate-200 text-[1.5625rem] text-slate-300 opacity-70 overflow-hidden text-ellipsis">
+                    항공사
+                  </th>
+                  <th className="p-[15px] whitespace-nowrap font-bold text-center uppercase border-b border-slate-200 text-[1.5625rem] text-slate-300 opacity-70 overflow-hidden text-ellipsis">
+                    기간
+                  </th>
+                  <th className="p-[15px] whitespace-nowrap font-bold text-center uppercase border-b border-slate-200 text-[1.5625rem] text-slate-300 opacity-70 overflow-hidden text-ellipsis">
+                    상태
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
                 {currentProposals.length > 0 ? (
                   currentProposals.map((proposal) => (
-                    <TableRow
+                    <tr
+                      className="cursor-pointer transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.02]"
                       key={proposal.proposalId}
                       onClick={() => onhandleDetail(proposal)}
                     >
-                      <TableCell>
+                      <td className="p-4 text-center bg-transparent border-b border-slate-200 whitespace-nowrap text-[1.2rem] truncate">
                         <div className="flex items-center">
                           <span className="text-[18px] font-semibold">
                             {proposal.name}
                           </span>
                         </div>
-                      </TableCell>
-                      <TableCell>
+                      </td>
+                      <td className="p-4 text-center bg-transparent border-b border-slate-200 whitespace-nowrap text-[1.2rem] truncate">
                         {proposal.departureAirportName} ➡{' '}
                         {proposal.arrivalAirportName}
-                      </TableCell>
-                      <TableCell>{proposal.airline}</TableCell>
-                      <TableCell>
+                      </td>
+                      <td className="p-4 text-center bg-transparent border-b border-slate-200 whitespace-nowrap text-[1.2rem] truncate">
+                        {proposal.airline}
+                      </td>
+                      <td className="p-4 text-center bg-transparent border-b border-slate-200 whitespace-nowrap text-[1.2rem] truncate">
                         {proposal.startDate} ~ {proposal.endDate}
-                      </TableCell>
-                      <TableCell>
-                        <Status status={proposal.proposalStatus}>
+                      </td>
+                      <td className="p-4 text-center bg-transparent border-b border-slate-200 whitespace-nowrap text-[1.2rem] truncate">
+                        <StatusBadge status={proposal.proposalStatus}>
                           {statusMapping[proposal.proposalStatus] ||
                             proposal.proposalStatus}
-                        </Status>
-                      </TableCell>
-                    </TableRow>
+                        </StatusBadge>
+                      </td>
+                    </tr>
                   ))
                 ) : (
-                  <TableRow>
-                    <TableCell colSpan="5">
+                  <tr className="cursor-pointer transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.02]">
+                    <td
+                      className="p-4 text-center bg-transparent border-b border-slate-200 whitespace-nowrap text-[1.2rem] truncate"
+                      colSpan="5"
+                    >
                       {selectedFilter.status
                         ? '해당 상태의 제안이 없습니다.'
                         : '참여 중인 여행이 없습니다.'}
-                    </TableCell>
-                  </TableRow>
+                    </td>
+                  </tr>
                 )}
-              </TableBody>
-            </Table>
-            <PaginationWrapper>
+              </tbody>
+            </table>
+            <div className="flex justify-center mt-10 mb-10">
               <ReactPaginate
                 previousLabel={'← 이전'}
                 nextLabel={'다음 →'}
@@ -183,17 +197,27 @@ const OngoingProposals = () => {
                 marginPagesDisplayed={2}
                 pageRangeDisplayed={5}
                 onPageChange={handlePageClick}
-                containerClassName={'pagination'}
-                activeClassName={'active'}
-                pageClassName={'page-item'}
-                previousClassName={'previous-item'}
-                nextClassName={'next-item'}
+                // Tailwind 클래스를 각 요소에 직접 주입
+                containerClassName={'flex items-center gap-1 list-none'}
+                pageLinkClassName={
+                  'px-4 py-2 border border-slate-200 rounded-md font-bold text-[#412b2b] bg-white hover:bg-[#412b2b] hover:text-[#ffd21c] transition-colors'
+                }
+                activeLinkClassName={'!bg-[#412b2b] !text-[#ffd21c]'}
+                previousLinkClassName={
+                  'px-4 py-2 border border-slate-200 rounded-md font-bold text-[#412b2b] bg-white hover:bg-[#412b2b] hover:text-[#ffd21c] transition-colors'
+                }
+                nextLinkClassName={
+                  'px-4 py-2 border border-slate-200 rounded-md font-bold text-[#412b2b] bg-white hover:bg-[#412b2b] hover:text-[#ffd21c] transition-colors'
+                }
+                disabledLinkClassName={
+                  'opacity-50 cursor-not-allowed hover:bg-white hover:text-[#412b2b]'
+                }
               />
-            </PaginationWrapper>
-          </TableWrapper>
-        </Card>
-      </CardWrapper>
-    </Container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
