@@ -1,4 +1,3 @@
-import React from 'react';
 
 const FlightList = ({ flights, isLoading }) => {
   if (isLoading) {

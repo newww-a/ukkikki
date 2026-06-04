@@ -1,15 +1,8 @@
-import React, { useContext, useState, useMemo, useEffect } from 'react';
+import { useContext, useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import TravelPlanDetailContext from '../../contexts/TravelPlanDetailContext';
 import ProposalDetailContext from '../../contexts/ProposalDetailContext';
-import {
-  SidebarContainer,
-  ButtonList,
-  ScheduleButton,
-  DetailButton,
-  SubmitButton,
-} from './style/DateSidebarStyle';
 
 const DateSidebar = ({ onToggleDetailForm, onDaySelect, onSubmit }) => {
   const travelPlanContext = useContext(TravelPlanDetailContext);
@@ -139,28 +132,36 @@ const DateSidebar = ({ onToggleDetailForm, onDaySelect, onSubmit }) => {
   };
 
   return (
-    <SidebarContainer>
+    <div className="flex flex-col h-[680px] justify-space-between overflow-visible">
       {/* 날짜 버튼 리스트 */}
-      <ButtonList>
+      <div className="flex flex-col gap-[7px]">
         {travelDays.map((day) => (
-          <ScheduleButton
+          <button
             key={day.id}
             active={day.id === selectedDayId}
             onClick={() => handleDaySelect(day.id)}
+            className={`text-black text-base font-semibold py-2 px-4 border-2 border-[#C9C9C9] rounded-lg w-[6.5rem] h-[4rem] transition-all duration-200 
+            ${day.id === selectedDayId ? 'bg-[#FFD21C]' : 'bg-white'}`}
           >
             {day.label}
-          </ScheduleButton>
+          </button>
         ))}
-        <DetailButton onClick={handleDetailClick} active={false}>
+        <button
+          onClick={handleDetailClick}
+          className="bg-white text-black text-base font-semibold py-2 px-4 mb-[7px] border-2 border-[#C9C9C9] rounded-lg w-[6.5rem] h-[4rem] transition-colors duration-200 ease-in-out"
+        >
           상세내용
-        </DetailButton>
-      </ButtonList>
+        </button>
+      </div>
 
       {/* 제출 버튼 */}
-      <SubmitButton onClick={handleSubmitClick}>
+      <button
+        onClick={handleSubmitClick}
+        className="bg-[#412B2B] text-white text-base font-semibold py-2 px-4 border-2 border-[#C9C9C9] rounded-lg w-[6.5rem] h-[4rem] transition-all duration-200"
+      >
         {proposal && proposal.proposalId ? '수정' : '제출'}
-      </SubmitButton>
-    </SidebarContainer>
+      </button>
+    </div>
   );
 };
 

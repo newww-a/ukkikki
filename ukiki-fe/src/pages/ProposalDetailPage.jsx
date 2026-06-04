@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams } from 'react-router';
 import Header from '../components/layout/Header.jsx';
 import Footer from '../components/layout/Footer.jsx';

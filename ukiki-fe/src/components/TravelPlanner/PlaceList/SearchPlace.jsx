@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Autocomplete } from '@react-google-maps/api';
 import banana from '../../../assets/loading-spinner.png';
 

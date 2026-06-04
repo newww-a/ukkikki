@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ProfileAvatar from './ProfileAvatar';
 import ProfileInfo from './ProfileInfo';
 import { publicRequest } from '../../../api/customAxios';

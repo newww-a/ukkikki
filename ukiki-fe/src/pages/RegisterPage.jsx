@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; // URL 파라미터 가져오기
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';

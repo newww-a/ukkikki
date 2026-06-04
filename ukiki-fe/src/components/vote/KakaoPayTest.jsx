@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import logo from '../../assets/kakaopay.png';
 import Swal from 'sweetalert2';
 

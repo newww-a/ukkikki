@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import ProposalContent from '../components/agencyDetail/ProposalContent.jsx';
@@ -7,16 +7,6 @@ import { TravelPlanDetailProvider } from '../contexts/TravelPlanDetailContext.js
 import UserLocationMap from '../components/agencyDetail/UserLocationMap.jsx';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router';
-import {
-  ProposalDetailContainer,
-  ContentContainer,
-  ProposalContentWrapper,
-  MapAndPlaceWrapper,
-  MapWrapper,
-  PlaceListWrapper,
-  AcceptButton,
-  ButtonPosition,
-} from './style/TravelPlanDetailPageStyle.jsx';
 
 const TravelPlanDetail = () => {
   const { travelPlanId } = useParams();
@@ -34,32 +24,37 @@ const TravelPlanDetail = () => {
 
   return (
     <TravelPlanDetailProvider travelPlanId={travelPlanId}>
-      <ProposalDetailContainer>
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <ContentContainer>
+        <div className="pt-[30px] flex-grow">
           <div>
-            <ProposalContentWrapper>
+            <div>
               <ProposalContent />
-            </ProposalContentWrapper>
-            <ButtonPosition>
-              <AcceptButton onClick={onhandleCreatePlan}>수락</AcceptButton>
-            </ButtonPosition>
-            <MapAndPlaceWrapper>
-              <MapWrapper>
+            </div>
+            <div className="flex justify-end items-end mr-[90px]">
+              <button
+                onClick={onhandleCreatePlan}
+                className="w-[100px] h-[40px] bg-white text-black text-[1rem] font-medium border border-black rounded-lg cursor-pointer transition-all duration-300 hover:-translate-y-0.5 "
+              >
+                수락
+              </button>
+            </div>
+            <div className="flex gap-5 p-10">
+              <div className="flex-grow p-4">
                 <UserLocationMap
                   latitude={selectedPlace?.latitude}
                   longitude={selectedPlace?.longitude}
                 />
-              </MapWrapper>
-              <PlaceListWrapper>
+              </div>
+              <div className="w-[440px] m-4 h-[500px] overflow-y-auto no-scrollbar">
                 <PlaceList handlePlaceClick={handlePlaceClick} />
-              </PlaceListWrapper>
-            </MapAndPlaceWrapper>
+              </div>
+            </div>
           </div>
-        </ContentContainer>
+        </div>
 
         <Footer />
-      </ProposalDetailContainer>
+      </div>
     </TravelPlanDetailProvider>
   );
 };

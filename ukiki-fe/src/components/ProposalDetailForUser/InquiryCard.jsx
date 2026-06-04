@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaReply } from 'react-icons/fa';
 
 const InquiryCard = ({ inquiry, onSubmitAnswer }) => {

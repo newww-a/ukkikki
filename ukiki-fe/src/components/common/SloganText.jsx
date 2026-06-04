@@ -1,4 +1,4 @@
-import React from 'react';
+
 const SloganText = ({ textColor = 'text-white' }) => {
   return (
     <div className="w-full mb-8 text-center md:w-1/2 md:text-left md:mb-0 fade-in-left">

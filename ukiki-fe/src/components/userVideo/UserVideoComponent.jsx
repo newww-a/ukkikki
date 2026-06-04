@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import OpenViduVideoComponent from './OvVideo';
 
 export default class UserVideoComponent extends Component {

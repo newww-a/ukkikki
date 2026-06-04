@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const VoteCountdown = ({ closeTime }) => {
   // 투표 시작: closeTime + 7일, 투표 종료: closeTime + 10일

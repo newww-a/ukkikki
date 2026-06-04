@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ProposalButton from './ProposalButton';
 import { STATUS_MAP, THEME_COLORS, STATUS_STYLES } from '../../constants';
 import { useNavigate } from 'react-router';

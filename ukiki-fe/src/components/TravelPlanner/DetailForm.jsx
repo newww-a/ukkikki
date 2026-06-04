@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import CurrencyInput from 'react-currency-input-field';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ko } from 'date-fns/locale';
 import { format, isSameDay, addMinutes, set } from 'date-fns';
 import { fetchAirportsAPI } from '../../api/agency';
-import {
-  DetailFormContainer,
-  Table,
-  TableHeadCell,
-} from './style/DetailFormStyle';
 
 const DetailForm = ({ proposalData, setProposalData }) => {
   const handleChange = (e) => {
@@ -95,18 +90,16 @@ const DetailForm = ({ proposalData, setProposalData }) => {
   };
 
   return (
-    <DetailFormContainer>
+    <div className="w-[70%] max-w-[900px] h-[600px] mx-auto my-[10px] bg-white overflow-y-auto">
       <h1 className="pt-3 text-3xl detail-form-title">여행 상세 내용</h1>
-      <hr className="my-4 custom-hr" />
+      <hr className="w-full my-4 mx-auto border-t-[3.5px] border-gray-300" />
 
       <form action="">
-        <Table>
+        <table className="w-full max-w-[1200px] mx-auto border-collapse table-auto">
           <tbody>
             {/* 여행 이름 (수정 불가) */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                여행 이름
-              </td>
+              <td className="py-2 w-[150px]">여행 이름</td>
               <td className="py-2">
                 <input
                   id="name"
@@ -122,9 +115,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 여행 일정 (수정 불가) */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                여행 일정
-              </td>
+              <td className="py-2 w-[150px]">여행 일정</td>
               <td className="py-2">
                 <div className="flex items-center gap-4">
                   <div className="flex items-center">
@@ -165,9 +156,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 항공사 */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                항공사
-              </td>
+              <td className="py-2 w-[150px]">항공사</td>
               <td className="py-2">
                 <input
                   id="airline"
@@ -182,9 +171,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 공항 정보 - 출발 */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                출발 공항 선택
-              </td>
+              <td className="py-2 w-[150px]">출발 공항 선택</td>
               <td className="py-2">
                 <div className="relative">
                   <input
@@ -229,9 +216,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 공항 정보 - 도착 */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                도착 공항 선택
-              </td>
+              <td className="py-2 w-[150px]">도착 공항 선택</td>
               <td className="py-2">
                 <div className="relative">
                   <input
@@ -275,9 +260,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 항공편 정보 - 출발 항공 (탑승/도착일시 한 줄 배치) */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                출발 항공편
-              </td>
+              <td className="py-2 w-[150px]">출발 항공편</td>
               <td className="py-2">
                 <div className="flex items-center gap-4">
                   {/* 탑승 일시 */}
@@ -350,9 +333,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 항공편 정보 - 도착 항공 (탑승/도착일시 한 줄 배치) */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                도착 항공편
-              </td>
+              <td className="py-2 w-[150px]">도착 항공편</td>
               <td className="py-2">
                 <div className="flex items-center gap-4">
                   {/* 탑승 일시 */}
@@ -425,9 +406,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 예약금 */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                예약금
-              </td>
+              <td className="py-2 w-[150px]">예약금</td>
               <td className="py-2">
                 <CurrencyInput
                   id="deposit"
@@ -449,9 +428,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 최소 인원 */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                최소인원
-              </td>
+              <td className="py-2 w-[150px]">최소인원</td>
               <td className="py-2">
                 <input
                   id="minPeople"
@@ -468,9 +445,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 가이드 여부 */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                가이드 여부
-              </td>
+              <td className="py-2 w-[150px]">가이드 여부</td>
               <td className="py-2">
                 <input
                   id="guideIncluded"
@@ -490,9 +465,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 여행자 보험 포함 여부 */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                여행자 보험 포함 여부
-              </td>
+              <td className="py-2 w-[150px]">여행자 보험 포함 여부</td>
               <td className="py-2">
                 <input
                   id="insuranceIncluded"
@@ -512,9 +485,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 상품 소개 */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                상품 소개
-              </td>
+              <td className="py-2 w-[150px]">상품 소개</td>
               <td className="py-2">
                 <input
                   id="productIntroduction"
@@ -529,9 +500,7 @@ const DetailForm = ({ proposalData, setProposalData }) => {
 
             {/* 취소/환불정책 */}
             <tr>
-              <td className="py-2" style={{ width: '150px' }}>
-                취소/환불정책
-              </td>
+              <td className="py-2 w-[150px]">취소/환불정책</td>
               <td className="py-2">
                 <input
                   id="refundPolicy"
@@ -544,9 +513,9 @@ const DetailForm = ({ proposalData, setProposalData }) => {
               </td>
             </tr>
           </tbody>
-        </Table>
+        </table>
       </form>
-    </DetailFormContainer>
+    </div>
   );
 };
 

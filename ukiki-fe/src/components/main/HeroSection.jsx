@@ -1,4 +1,3 @@
-import React from 'react';
 import background from '../../assets/home_image.png';
 import SearchBar from './SearchBar';
 import SloganText from '../common/SloganText';

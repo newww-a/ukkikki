@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FaUser, FaHistory, FaSignOutAlt } from 'react-icons/fa';
 import SidebarItem from './SidebarItem';
 import { useLocation, useNavigate } from 'react-router-dom';

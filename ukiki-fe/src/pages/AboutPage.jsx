@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useLoadingStore } from '../store/loadingStore';
 import axios from 'axios';
 import Header from '../components/layout/Header';

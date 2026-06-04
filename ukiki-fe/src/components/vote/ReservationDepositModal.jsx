@@ -1,5 +1,5 @@
 // ReservationDepositModal.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { publicRequest } from '../../api/customAxios';
 import Swal from 'sweetalert2';
 import KakaoPayTest from './KakaoPayTest';

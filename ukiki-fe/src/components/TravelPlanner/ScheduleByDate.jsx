@@ -1,12 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import TravelPlanDetailContext from '../../contexts/TravelPlanDetailContext';
 import ProposalDetailContext from '../../contexts/ProposalDetailContext';
-import {
-  Info,
-  ScheduleByDateContainer,
-  ButtonContainer,
-  ScheduleContainer,
-} from './style/ScheduleByDateStyle';
 import Schedule from './PlaceList/SchedulePlaces';
 import banana from '../../assets/loading-spinner.png';
 const ScheduleByDate = ({
@@ -54,17 +48,17 @@ const ScheduleByDate = ({
           endTime: item.endTime || '',
         }))
     : daySchedules.length > 0
-    ? daySchedules
-        .find((ds) => Number(ds.dayNumber) === Number(selectedDayNumber))
-        ?.schedules.map((schedule) => ({
-          ...schedule,
-          dayNumber: selectedDayNumber,
-          // 기존 스케줄에 scheduleId 또는 placeId가 있다면 그대로 사용
-          placeId: schedule.scheduleId || schedule.placeId,
-          startTime: schedule.startTime || '',
-          endTime: schedule.endTime || '',
-        })) || []
-    : [];
+      ? daySchedules
+          .find((ds) => Number(ds.dayNumber) === Number(selectedDayNumber))
+          ?.schedules.map((schedule) => ({
+            ...schedule,
+            dayNumber: selectedDayNumber,
+            // 기존 스케줄에 scheduleId 또는 placeId가 있다면 그대로 사용
+            placeId: schedule.scheduleId || schedule.placeId,
+            startTime: schedule.startTime || '',
+            endTime: schedule.endTime || '',
+          })) || []
+      : [];
 
   // 생성 페이지 혹은 수정 페이지에서 새로 추가된 장소 배열
   const newSchedules = selectedPlaces || [];
@@ -150,15 +144,15 @@ const ScheduleByDate = ({
   };
 
   return (
-    <ScheduleByDateContainer>
-      <Info>
-        <h1>{arrivalCity.name}</h1>
-        <h3>
+    <div className="my-2.5 w-full">
+      <div className="w-full h-[100px] flex flex-col justify-center border-b border-[#ddd]">
+        <h1 className="text-[40px] font-bold ml-[5px]">{arrivalCity.name}</h1>
+        <h3 className="text-[40px] text-[#555] ml-[5px]">
           {startDate} ~ {endDate}
         </h3>
-      </Info>
+      </div>
 
-      <ScheduleContainer>
+      <div className="h-[570px] overflow-y-auto">
         {/* 선택된 장소들을 표시하는 영역 */}
         {effectiveSelectedPlaces.length > 0 ? (
           <Schedule
@@ -178,11 +172,16 @@ const ScheduleByDate = ({
           </div>
         )}
 
-        <ButtonContainer>
-          <button onClick={onTogglePlaceSelection}>장소 추가</button>
-        </ButtonContainer>
-      </ScheduleContainer>
-    </ScheduleByDateContainer>
+        <div className="pt-2.5">
+          <button
+            onClick={onTogglePlaceSelection}
+            className="w-[280px] border border-[#c9c9c9] rounded-[8px] py-[8px] px-[80px] transition-colors duration-300 ease-in-out"
+          >
+            장소 추가
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 

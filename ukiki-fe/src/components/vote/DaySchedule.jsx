@@ -1,5 +1,3 @@
-// DaySchedule.jsx
-import React from 'react';
 
 const DaySchedule = ({ daySchedule, formatDateTime }) => {
   return (

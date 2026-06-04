@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Sidebar from '../components/mypage/Sidebar';
@@ -7,13 +7,6 @@ import ReceivedProposals from '../components/mypage/company/ReceivedProposals';
 import { TravelPlanProvider } from '../contexts/travelPlanContext';
 import useAuthStore from '../store/authStore';
 import { useNavigate, useLocation } from 'react-router';
-import {
-  MyProfileContainer,
-  MainContentWrapper,
-  GridWrapper,
-  SidebarWrapper,
-  ContentWrapper,
-} from './style/MyProfilePageStyle';
 import AcceptedProposals from '../components/mypage/company/AcceptedProposals';
 
 const ProposalStatus = () => {
@@ -51,23 +44,23 @@ const ProposalStatus = () => {
   };
 
   return (
-    <MyProfileContainer>
+    <div className="flex flex-col">
       <Header />
-      <MainContentWrapper>
-        <GridWrapper>
+      <div className="flex-grow max-w-[1280px] mx-auto py-[40px] px-[24px] h-full">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-[20px] md:gap-[16px]">
           {/* 왼쪽 여백 */}
-          <SidebarWrapper>
+          <div className="border-r border-[#e2e8f0] pr-[16px] hidden md:block">
             <Sidebar
               onMenuClick={setActiveComponent} // 클릭 시 activeComponent 값을 변경
               userRole={userRole} // 사용자 역할을 전달
             />
-          </SidebarWrapper>
+          </div>
           {/* 메인 콘텐츠 */}
-          <ContentWrapper>{renderContent()}</ContentWrapper>
-        </GridWrapper>
-      </MainContentWrapper>
+          <div className="bg-white p-[16px]">{renderContent()}</div>
+        </div>
+      </div>
       <Footer />
-    </MyProfileContainer>
+    </div>
   );
 };
 

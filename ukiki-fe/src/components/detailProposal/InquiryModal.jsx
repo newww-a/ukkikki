@@ -1,5 +1,5 @@
 // InquiryModal.jsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getInquiries, updateInquiryAnswer } from '../../api/agency';
 import { FaReply, FaPaperPlane } from 'react-icons/fa';
 import AOS from 'aos';

@@ -1,5 +1,4 @@
-// components/mypage/my/MyTravelRooms.jsx
-import React from 'react';
+
 import MyRoomTable from './MyRoomTable';
 const MyRooms = () => {
   return (
