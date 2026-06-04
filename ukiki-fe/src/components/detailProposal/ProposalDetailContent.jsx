@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
-import { MainContent } from '../../pages/style/AgencyRoomListPageStyle';
 import ProposalDetailContext from '../../contexts/ProposalDetailContext';
 import 'tailwindcss/tailwind.css';
 import { getPassport, getTotalCount } from '../../api/agency';
@@ -180,7 +179,7 @@ const ProposalDetailContent = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
-      <MainContent className="flex-1">
+      <div className="flex flex-col flex-1">
         {modalMessage && (
           <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
             <div className="p-6 text-center bg-white rounded-lg shadow-lg">
@@ -474,7 +473,7 @@ const ProposalDetailContent = () => {
             </div>
           </div>
         </div>
-      </MainContent>
+      </div>
     </div>
   );
 };
