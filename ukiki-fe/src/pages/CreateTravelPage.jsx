@@ -5,7 +5,6 @@ import { useParams } from 'react-router';
 import { TravelPlanDetailProvider } from '../contexts/TravelPlanDetailContext';
 import { ProposalDetailProvider } from '../contexts/ProposalDetailContext';
 import MainLayout from '../components/TravelPlanner/MainLayout';
-import { StyledMainLayout } from './style/CreateTravelPageStyle';
 import { TravelPlanDetail } from '../api/agency';
 
 const CreateTravelPage = () => {
@@ -34,16 +33,16 @@ const CreateTravelPage = () => {
           proposalId={proposalId}
           travelPlanId={travelPlanId}
         >
-          <StyledMainLayout>
+          <div className="w-full h-[700px]">
             <MainLayout />
-          </StyledMainLayout>
+          </div>
         </ProposalDetailProvider>
       ) : (
         // 새 여행 계획 생성 페이지: proposalId가 없으면 TravelPlanDetailProvider 사용
         <TravelPlanDetailProvider travelPlanId={travelPlanId}>
-          <StyledMainLayout>
+          <div className="w-full h-[700px]">
             <MainLayout />
-          </StyledMainLayout>
+          </div>
         </TravelPlanDetailProvider>
       )}
       <Footer />
