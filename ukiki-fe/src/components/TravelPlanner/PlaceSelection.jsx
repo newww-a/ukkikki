@@ -4,14 +4,6 @@ import TravelPlanDetailContext from '../../contexts/TravelPlanDetailContext';
 import ProposalDetailContext from '../../contexts/ProposalDetailContext';
 import SuggestedPlaceList from './PlaceList/SuggestedPlaceList';
 import SearchPlace from './PlaceList/SearchPlace';
-import {
-  StyledContainer,
-  DayLabel,
-  DayDate,
-  TabButton,
-  StylePlaceDay,
-  DayContent,
-} from './style/PlaceSelectionStyle';
 import { v4 as uuidv4 } from 'uuid';
 
 const libraries = ['places'];
@@ -198,31 +190,45 @@ const PlaceSelection = ({ onSelectPlace }) => {
   );
 
   return (
-    <StyledContainer>
-      <StylePlaceDay>
+    <div className="mt-[14px] px-[5px]">
+      <div className="bg-white ml-[-5px] mt-[-14px] w-[102%] md:w-[95%] md:mx-auto sm:w-[90%] sm:mx-auto">
         {selectedDay && (
-          <DayContent>
-            <DayLabel>{selectedDay.label}</DayLabel>
-            <DayDate>_ [{selectedDay.date}]</DayDate>
-          </DayContent>
+          <div className="ml-[5px]">
+            <span className="text-[30px] font-bold text-[#333]">
+              {selectedDay.label}
+            </span>
+            <span className="text-[18px] text-[#555] ml-[5px]">
+              _ [{selectedDay.date}]
+            </span>
+          </div>
         )}
-        <TabButton>
+        <div className="flex mb-[14px] justify-evenly">
           <button
             onClick={() => setIsSearchMode(false)}
-            className={!isSearchMode ? 'active' : 'inactive'}
+            className={`flex-1 px-[2px] py-[8px] text-[16px] font-semibold cursor-pointer border-none border-b-2 transition-all duration-200 text-center min-w-[10px] whitespace-nowrap 
+            ${
+              !isSearchMode
+                ? 'border-[#2563eb] text-[#2563eb]'
+                : 'border-transparent text-[#9ca3af]'
+            }`}
           >
             제안 장소 목록
           </button>
           <button
             onClick={() => setIsSearchMode(true)}
-            className={isSearchMode ? 'active' : 'inactive'}
+            className={`flex-1 px-[2px] py-[8px] text-[16px] font-semibold cursor-pointer border-none border-b-2 transition-all duration-200 text-center min-w-[10px] whitespace-nowrap 
+            ${
+              isSearchMode
+                ? 'border-[#2563eb] text-[#2563eb]'
+                : 'border-transparent text-[#9ca3af]'
+            }`}
           >
             새로운 장소 검색
           </button>
-        </TabButton>
-      </StylePlaceDay>
+        </div>
+      </div>
 
-      <div className="place-list">
+      <div className="h-[550px] overflow-y-auto">
         {!isSearchMode ? (
           <SuggestedPlaceList
             places={filteredPlaceList}
@@ -243,7 +249,7 @@ const PlaceSelection = ({ onSelectPlace }) => {
           />
         )}
       </div>
-    </StyledContainer>
+    </div>
   );
 };
 
