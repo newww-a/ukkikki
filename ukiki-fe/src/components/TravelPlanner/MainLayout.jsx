@@ -7,16 +7,6 @@ import ScheduleByDate from './ScheduleByDate';
 import PlaceSelection from './PlaceSelection';
 import DetailForm from './DetailForm';
 import { CreateTravelProposal, UpdateTravelProposal } from '../../api/agency';
-import {
-  StyledMainLayout,
-  StyledDateSidebar,
-  StyledMapDisplay,
-  StyleScheduleByDate,
-  StyleMapContainer,
-  StylePlaceSelection,
-  DetailFormWrapper,
-  ContentArea,
-} from './style/MainLayoutStyle';
 import Swal from 'sweetalert2';
 
 // 간단한 고유 ID 생성 함수
@@ -330,28 +320,28 @@ const MainLayout = () => {
   };
 
   return (
-    <StyledMainLayout>
+    <div className="flex w-full h-full flex-row ">
       {/* 사이드바 */}
-      <StyledDateSidebar>
+      <div className="flex justify-center my-2.5 h-[680px] w-[150px] pb-2.5 overflow-y-scroll no-scrollbar">
         <DateSidebar
           onToggleDetailForm={toggleDetailForm}
           onDaySelect={handleDaySelectFromSidebar}
           onSubmit={handleSubmitProposal}
         />
-      </StyledDateSidebar>
+      </div>
 
       {/* 사이드바 제외 영역 */}
-      <ContentArea>
+      <div className="flex w-full h-full pt-2.5 m-0">
         {showDetailForm ? (
-          <DetailFormWrapper>
+          <div className="h-[90%] w-[90%] bg-white/95 p-5">
             <DetailForm
               proposalData={proposalData}
               setProposalData={setProposalData}
             />
-          </DetailFormWrapper>
+          </div>
         ) : (
           <>
-            <StyleScheduleByDate>
+            <div className="flex h-full w-1/4 min-w-[300px] max-w-[300px]">
               <ScheduleByDate
                 onTogglePlaceSelection={togglePlaceSelection}
                 selectedDayNumber={selectedDayId}
@@ -360,25 +350,28 @@ const MainLayout = () => {
                 onAddTime={handleSetTime}
                 arrivalCity={arrivalCity}
               />
-            </StyleScheduleByDate>
-            <StyledMapDisplay>
-              <StyleMapContainer>
+            </div>
+            <div className="flex w-full my-2.5">
+              <div className="relative w-full h-full">
                 <MapDisplay
                   arrivalCity={arrivalCity.name}
                   selectedPlaces={currentDayPlaces}
                   day={selectedDayId}
                 />
                 {showPlaceSelection && (
-                  <StylePlaceSelection show="true">
+                  <div
+                    show="true"
+                    className="absolute top-0 left-0 z-10 w-1/4 h-full min-w-[380px] max-w-[400px] bg-white/80"
+                  >
                     <PlaceSelection onSelectPlace={handleSelectPlace} />
-                  </StylePlaceSelection>
+                  </div>
                 )}
-              </StyleMapContainer>
-            </StyledMapDisplay>
+              </div>
+            </div>
           </>
         )}
-      </ContentArea>
-    </StyledMainLayout>
+      </div>
+    </div>
   );
 };
 
